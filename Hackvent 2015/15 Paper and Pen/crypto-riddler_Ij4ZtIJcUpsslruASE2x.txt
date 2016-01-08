@@ -1,0 +1,24 @@
+We've captured a strange message. It looks like it is encrypted somehow ...
+iw, hu, fv, lu, dv, cy, og, lc, gy, fq, od, lo, fq, is, ig, gu, hs, hi, ds, cy, oo, os, iu, fs, gu, lh, dq, lv, gu, iw, hv, gu, di, hs, cy, oc, iw, gc
+
+
+We've also intercepted what seems to be a hint to the key:
+bytwycju + yzvyjjdy ^ vugljtyn + ugdztnwv | xbfziozy = bzuwtwol
+    ^         ^          ^          ^          ^
+wwnnnqbw - uclfqvdu & oncycbxh | oqcnwbsd ^ cgyoyfjg = vyhyjivb
+    &         &          &          &          &
+yzdgotby | oigsjgoj | ttligxut - dhcqxtfw & szblgodf = sfgsoxdd
+    +         +          +          +          +
+yjjowdqh & niiqztgs + ctvtwysu & diffhlnl - thhwohwn = xsvuojtx
+    -         -           -         -          -
+nttuhlnq ^ oqbctlzh - nshtztns ^ htwizvwi + udluvhcz = syhjizjq
+    =         =           =         =          =         
+fjivucti   zoljwdfl   sugvqgww   uxztiywn   jqxizzxq
+
+
+Note:
+  assume q != 0
+  a letter is a decimal digit is a letter
+  each digit has exactly two different letter representations
+  C-like operator precedence
+
