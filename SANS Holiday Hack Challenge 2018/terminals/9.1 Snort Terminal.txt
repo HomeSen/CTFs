@@ -1,0 +1,72 @@
+  _  __     _             _       _____          _   _      
+ | |/ /    (_)           | |     / ____|        | | | |     
+ | ' / _ __ _ _ __   __ _| | ___| |     __ _ ___| |_| | ___ 
+ |  < | '__| | '_ \ / _` | |/ _ \ |    / _` / __| __| |/ _ \
+ | . \| |  | | | | | (_| | |  __/ |___| (_| \__ \ |_| |  __/
+ |_|\_\_|  |_|_|_|_|\__, |_|\___|\_____\__,_|___/\__|_|\___|
+             / ____| __/ |          | |                     
+            | (___  |___/  ___  _ __| |_                    
+             \___ \| '_ \ / _ \| '__| __|                   
+             ____) | | | | (_) | |  | |_                    
+            |_____/|_|_|_|\___/|_|_  \__|                   
+               |_   _|  __ \ / ____|                        
+                 | | | |  | | (___                          
+         _____   | | | |  | |\___ \        __               
+        / ____| _| |_| |__| |____) |      /_ |              
+       | (___  |_____|_____/|_____/ _ __   | |              
+        \___ \ / _ \ '_ \/ __|/ _ \| '__|  | |              
+        ____) |  __/ | | \__ \ (_) | |     | |              
+       |_____/ \___|_| |_|___/\___/|_|     |_|              
+============================================================
+INTRO:
+  Kringle Castle is currently under attacked by new piece of
+  ransomware that is encrypting all the elves files. Your 
+  job is to configure snort to alert on ONLY the bad 
+  ransomware traffic.
+GOAL:
+  Create a snort rule that will alert ONLY on bad ransomware
+  traffic by adding it to snorts /etc/snort/rules/local.rules
+  file. DNS traffic is constantly updated to snort.log.pcap
+COMPLETION:
+  Successfully create a snort rule that matches ONLY
+  bad DNS traffic and NOT legitimate user traffic and the 
+  system will notify you of your success.
+  
+  Check out ~/more_info.txt for additional information.
+# $Id: local.rules,v 1.11 2004/07/23 20:15:44 bmc Exp $
+elf@edc0bb140e88:~$ cat more_info.txt 
+MORE INFO:
+  A full capture of DNS traffic for the last 30 seconds is 
+  constantly updated to:
+  /home/elf/snort.log.pcap
+  You can also test your snort rule by running:
+
+  snort -A fast -r ~/snort.log.pcap -l ~/snort_logs -c /etc/snort/snort.conf
+
+  This will create an alert file at ~/snort_logs/alert
+
+  This sensor also hosts an nginx web server to access the 
+  last 5 minutes worth of pcaps for offline analysis. These 
+  can be viewed by logging into:
+
+  http://snortsensor1.kringlecastle.com/
+
+  Using the credentials:
+  ----------------------
+  Username | elf
+  Password | onashelf
+
+  tshark and tcpdump have also been provided on this sensor.
+
+HINT: 
+  Malware authors often user dynamic domain names and 
+  IP addresses that change frequently within minutes or even 
+  seconds to make detecting and block malware more difficult.
+  As such, its a good idea to analyze traffic to find patterns
+  and match upon these patterns instead of just IP/domains.
+
+elf@edc0bb140e88:~$ 
+elf@edc0bb140e88:~$ vim /etc/snort/rules/local.rules 
+elf@edc0bb140e88:~$ 
+[+] Congratulation! Snort is alerting on all ransomware and only the ransomware! 
+[+]  

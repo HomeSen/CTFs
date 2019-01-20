@@ -1,0 +1,103 @@
+We just hired this new worker,
+Californian or New Yorker?
+Think he's making some new toy bag...
+My job is to make his name tag.
+
+Golly gee, I'm glad that you came,
+I recall naught but his last name!
+Use our system or your own plan,
+Find the first name of our guy "Chan!"
+
+-Bushy Evergreen
+
+To solve this challenge, determine the new worker's first name and submit to runtoanswer.
+
+
+
+
+====================================================================
+=                                                                  =
+= S A N T A ' S  C A S T L E  E M P L O Y E E  O N B O A R D I N G =
+=                                                                  =
+====================================================================
+
+
+
+
+ Press  1 to start the onboard process.
+ Press  2 to verify the system.
+ Press  q to quit.
+
+
+Please make a selection: 2
+
+Validating data store for employee onboard information.
+Enter address of server: a; ls
+ping: unknown host a
+menu.ps1  onboard.db  runtoanswer
+onboard.db: SQLite 3.x database
+Press Enter to continue...: 
+
+
+Please make a selection: 2
+
+Validating data store for employee onboard information.
+Enter address of server: a; sqlite3 onboard.db
+ping: unknown host a
+SQLite version 3.11.0 2016-02-15 17:29:24
+Enter ".help" for usage hints.
+sqlite> .tables
+onboard
+sqlite> .headers on
+sqlite> select * from onboard limit 1;
+id|fname|lname|street1|street2|city|postalcode|phone|email
+10|Karen|Duck|52 Annfield Rd||BEAL|DN14 7AU|077 8656 6609|karensduck@einrot.com
+sqlite> select * from onboard where lname = 'Chan';
+id|fname|lname|street1|street2|city|postalcode|phone|email
+84|Scott|Chan|48 Colorado Way||Los Angeles|90067|4017533509|scottmchan90067@gmail.com
+sqlite> .quit
+onboard.db: SQLite 3.x database
+Press Enter to continue...: 
+
+
+Please make a selection: 2
+
+Validating data store for employee onboard information.
+Enter address of server: a; ./runtoanswer
+ping: unknown host a
+Loading, please wait......
+
+
+
+Enter Mr. Chan's first name: Scott
+
+
+                                                                                
+    .;looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooool:'    
+  'ooooooooooookOOooooxOOdodOOOOOOOdoxOOdoooooOOkoooooooxO000Okdooooooooooooo;  
+ 'oooooooooooooXMWooooOMMxodMMNKKKKxoOMMxoooooWMXoooookNMWK0KNMWOooooooooooooo; 
+ :oooooooooooooXMWooooOMMxodMM0ooooooOMMxoooooWMXooooxMMKoooooKMMkooooooooooooo 
+ coooooooooooooXMMMMMMMMMxodMMWWWW0ooOMMxoooooWMXooooOMMkoooookMM0ooooooooooooo 
+ coooooooooooooXMWdddd0MMxodMM0ddddooOMMxoooooWMXooooOMMOoooooOMMkooooooooooooo 
+ coooooooooooooXMWooooOMMxodMMKxxxxdoOMMOkkkxoWMXkkkkdXMW0xxk0MMKoooooooooooooo 
+ cooooooooooooo0NXooookNNdodXNNNNNNkokNNNNNNOoKNNNNNXookKNNWNXKxooooooooooooooo 
+ cooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo 
+ cooooooooooooooooooooooooooooooooooMYcNAMEcISooooooooooooooooooooooooooooooooo
+ cddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddo 
+ OMMMMMMMMMMMMMMMNXXWMMMMMMMNXXWMMMMMMWXKXWMMMMWWWWWWWWWMWWWWWWWWWMMMMMMMMMMMMW 
+ OMMMMMMMMMMMMW:  .. ;MMMk'     .NMX:.  .  .lWO         d         xMMMMMMMMMMMW 
+ OMMMMMMMMMMMMo  OMMWXMMl  lNMMNxWK  ,XMMMO  .MMMM. .MMMMMMM, .MMMMMMMMMMMMMMMW 
+ OMMMMMMMMMMMMX.  .cOWMN  'MMMMMMM;  WMMMMMc  KMMM. .MMMMMMM, .MMMMMMMMMMMMMMMW 
+ OMMMMMMMMMMMMMMKo,   KN  ,MMMMMMM,  WMMMMMc  KMMM. .MMMMMMM, .MMMMMMMMMMMMMMMW 
+ OMMMMMMMMMMMMKNMMMO  oM,  dWMMWOWk  cWMMMO  ,MMMM. .MMMMMMM, .MMMMMMMMMMMMMMMW 
+ OMMMMMMMMMMMMc ...  cWMWl.  .. .NMk.  ..  .oMMMMM. .MMMMMMM, .MMMMMMMMMMMMMMMW 
+ xXXXXXXXXXXXXXKOxk0XXXXXXX0kkkKXXXXXKOkxkKXXXXXXXKOKXXXXXXXKO0XXXXXXXXXXXXXXXK 
+ .oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo, 
+  .looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo,  
+    .,cllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllc;.    
+                                                                                
+
+Congratulations!
+
+onboard.db: SQLite 3.x database
+Press Enter to continue...:

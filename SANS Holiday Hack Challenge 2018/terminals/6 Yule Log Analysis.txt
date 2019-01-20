@@ -1,0 +1,242 @@
+                                                                                
+                             .;:cccckkxdc;.                                     
+                         .o0xc;,,,,,XMMMMMkc:,.                                 
+                       lXMMMX;,,,,,,XMMMMK,,coddcclOkxoc,.                      
+                     lk:oNMMMX;,,,,,XMMWN00o:,,,,,:MMMMMMoc;'                   
+                   .0l,,,,dNMMX;,,,,XNNWMMMk,,,,,,:MMMMMx,,,,:;.                
+                  .K;,,,,,,,xWMX;,,;Kx:kWMMMk,,,,,:MMMM0,,,,,,,:k'              
+                 .XklooooddolckWN:l0:,,,;kWMMO,,,,:MMMN;,,,,,cOWMMd             
+               ;oooc;,,,cMMMMMMxkO0,,,,,,,:OMM0,,,:MMWc,,,,lKMMMMWKo            
+            ;OMMWl,,,,,,cMMMMMO,,,:cc,,,,,,,:0M0,,:MMd,,,oXMMWKxc,,,c           
+          cOdXMMMWl,,,,,cMMMMX,,,,,,,:xxo:,,,,cK0,:MO,;xNWKxc,,,,,,,:.          
+        .0l,,,oNMMWl,,,,cMMMW:,,,,,,dXMWNMWXOdc;lxcX:xOxc,,,,,,,,,,,,:          
+       ,0;,,,,,,dNMWo,,,cMMMl,,,,;xNMMMMW0kkkkkkddxdddxxxxxxxxxxxxxxxo          
+      .Wl,,,,,,,,,dWMo,,cMMx,,,:OWMMW0xc,:c,,:dOkcK:kc:ok0NMMMMMMMMMMd          
+      KMMWXOdl;,,,,;xWd,cM0,,l0MW0dc,,,,,,lkWWk:,OW,:XO:,,,;ldOXWMMMM'          
+     'MMMMMMMMMN0ko:,;kdcN;o00dc,,,,,,,,,,,0x;,,oMW,,;XWk;,,,,,,,:okk           
+     cNKKKKKKKKKKKKKKkoodxxdccccccccccccccco,,,:WMW,,,;XMWk;,,,,,,,l            
+     :x,,,,,,,,,,,,,cdkoOldldOKWMMMMMMMMMMMx,,,XMMW,,,,;XMMWx,,,,;c             
+     .K,,,,,,,,,cd0WKl,xN,oXo,,,:ok0NMMMMMMc,,OMMMW,,,,,;KMMMNd;l'              
+      dl,,,,cx0WMM0c,,lMN,,oMXl,,,,,,;ldOX0',dMMMMW,,,,,,;KMMMK;                
+       OoxKWMMMWk:,,,;NMN,,,lWMKc,,,,,,,,ldclWMMMMW,,,,,,:oOl.                  
+        OMMMMNx;,,,,,KMMN,,,,lWMM0c,,,,,l. .,cdkO00ccc:;,.                      
+         cWXo,,,,,,,kMMMN,,,,,cWMMM0:,c:                                        
+          .Kc,,,,,,:MMMMN,,,,,,dMMMMWk'                                         
+
+I am Pepper Minstix, and I'm looking for your help.
+Bad guys have us tangled up in pepperminty kelp!
+"Password spraying" is to blame for this our grinchly fate.
+Should we blame our password policies which users hate?
+
+Here you'll find a web log filled with failure and success.
+One successful login there requires your redress.
+Can you help us figure out which user was attacked?
+Tell us who fell victim, and please handle this with tact...
+
+  Submit the compromised webmail username to 
+  runtoanswer to complete this challenge.
+elf@9d47349d0d45:~$ ls
+evtx_dump.py  ho-ho-no.evtx  runtoanswer
+elf@9d47349d0d45:~$ python evtx_dump.py ho-ho-no.evtx | tail -n 50
+<Data Name="ElevatedToken">%%1842</Data>
+</EventData>
+</Event>
+
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event"><System><Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"></Provider>
+<EventID Qualifiers="">4624</EventID>
+<Version>2</Version>
+<Level>0</Level>
+<Task>12544</Task>
+<Opcode>0</Opcode>
+<Keywords>0x8020000000000000</Keywords>
+<TimeCreated SystemTime="2018-09-10 13:25:49.397736"></TimeCreated>
+<EventRecordID>245492</EventRecordID>
+<Correlation ActivityID="{71a9b66f-4900-0001-a8b6-a9710049d401}" RelatedActivityID=""></Correlation>
+<Execution ProcessID="664" ThreadID="712"></Execution>
+<Channel>Security</Channel>
+<Computer>WIN-KCON-EXCH16.EM.KRINGLECON.COM</Computer>
+<Security UserID=""></Security>
+</System>
+<EventData><Data Name="SubjectUserSid">S-1-0-0</Data>
+<Data Name="SubjectUserName">-</Data>
+<Data Name="SubjectDomainName">-</Data>
+<Data Name="SubjectLogonId">0x0000000000000000</Data>
+<Data Name="TargetUserSid">S-1-5-21-25059752-1411454016-2901770228-1134</Data>
+<Data Name="TargetUserName">HealthMailboxbe58608</Data>
+<Data Name="TargetDomainName">EM.KRINGLECON.COM</Data>
+<Data Name="TargetLogonId">0x000000000179476b</Data>
+<Data Name="LogonType">3</Data>
+<Data Name="LogonProcessName">Kerberos</Data>
+<Data Name="AuthenticationPackageName">Kerberos</Data>
+<Data Name="WorkstationName">-</Data>
+<Data Name="LogonGuid">{66b54d86-4302-a414-4b44-b4078e2c002e}</Data>
+<Data Name="TransmittedServices">-</Data>
+<Data Name="LmPackageName">-</Data>
+<Data Name="KeyLength">0</Data>
+<Data Name="ProcessId">0x0000000000000000</Data>
+<Data Name="ProcessName">-</Data>
+<Data Name="IpAddress">-</Data>
+<Data Name="IpPort">-</Data>
+<Data Name="ImpersonationLevel">%%1840</Data>
+<Data Name="RestrictedAdminMode">-</Data>
+<Data Name="TargetOutboundUserName">-</Data>
+<Data Name="TargetOutboundDomainName">-</Data>
+<Data Name="VirtualAccount">%%1843</Data>
+<Data Name="TargetLinkedLogonId">0x0000000000000000</Data>
+<Data Name="ElevatedToken">%%1842</Data>
+</EventData>
+</Event>
+
+</Events>
+elf@9d47349d0d45:~$ python evtx_dump.py ho-ho-no.evtx | grep -A40 '4625' | grep 'IpAddress' | cut -d '>' -f 2 | cut -d '<' -f 1 | sort | uniq -c
+      1 10.158.210.210
+    211 172.31.254.101
+elf@9d47349d0d45:~$ python evtx_dump.py ho-ho-no.evtx | grep -A40 '4624' | grep -A10 -B33 '172.31.254.101'
+--
+<EventID Qualifiers="">4624</EventID>
+<Version>2</Version>
+<Level>0</Level>
+<Task>12544</Task>
+<Opcode>0</Opcode>
+<Keywords>0x8020000000000000</Keywords>
+<TimeCreated SystemTime="2018-09-10 13:05:03.702278"></TimeCreated>
+<EventRecordID>240171</EventRecordID>
+<Correlation ActivityID="{71a9b66f-4900-0001-a8b6-a9710049d401}" RelatedActivityID=""></Correlation>
+<Execution ProcessID="664" ThreadID="15576"></Execution>
+<Channel>Security</Channel>
+<Computer>WIN-KCON-EXCH16.EM.KRINGLECON.COM</Computer>
+<Security UserID=""></Security>
+</System>
+<EventData><Data Name="SubjectUserSid">S-1-5-18</Data>
+<Data Name="SubjectUserName">WIN-KCON-EXCH16$</Data>
+<Data Name="SubjectDomainName">EM.KRINGLECON</Data>
+<Data Name="SubjectLogonId">0x00000000000003e7</Data>
+<Data Name="TargetUserSid">S-1-5-21-25059752-1411454016-2901770228-1156</Data>
+<Data Name="TargetUserName">minty.candycane</Data>
+<Data Name="TargetDomainName">EM.KRINGLECON</Data>
+<Data Name="TargetLogonId">0x000000000114a4fe</Data>
+<Data Name="LogonType">8</Data>
+<Data Name="LogonProcessName">Advapi  </Data>
+<Data Name="AuthenticationPackageName">Negotiate</Data>
+<Data Name="WorkstationName">WIN-KCON-EXCH16</Data>
+<Data Name="LogonGuid">{d1a830e3-d804-588d-aea1-48b8610c3cc1}</Data>
+<Data Name="TransmittedServices">-</Data>
+<Data Name="LmPackageName">-</Data>
+<Data Name="KeyLength">0</Data>
+<Data Name="ProcessId">0x00000000000019f0</Data>
+<Data Name="ProcessName">C:\Windows\System32\inetsrv\w3wp.exe</Data>
+<Data Name="IpAddress">172.31.254.101</Data>
+<Data Name="IpPort">38283</Data>
+<Data Name="ImpersonationLevel">%%1833</Data>
+<Data Name="RestrictedAdminMode">-</Data>
+<Data Name="TargetOutboundUserName">-</Data>
+<Data Name="TargetOutboundDomainName">-</Data>
+<Data Name="VirtualAccount">%%1843</Data>
+<Data Name="TargetLinkedLogonId">0x0000000000000000</Data>
+<Data Name="ElevatedToken">%%1842</Data>
+--
+<EventID Qualifiers="">4624</EventID>
+--
+--
+<EventID Qualifiers="">4624</EventID>
+<Version>2</Version>
+<Level>0</Level>
+<Task>12544</Task>
+<Opcode>0</Opcode>
+<Keywords>0x8020000000000000</Keywords>
+<TimeCreated SystemTime="2018-09-10 13:07:02.556292"></TimeCreated>
+<EventRecordID>240573</EventRecordID>
+<Correlation ActivityID="{71a9b66f-4900-0001-a8b6-a9710049d401}" RelatedActivityID=""></Correlation>
+<Execution ProcessID="664" ThreadID="12152"></Execution>
+<Channel>Security</Channel>
+<Computer>WIN-KCON-EXCH16.EM.KRINGLECON.COM</Computer>
+<Security UserID=""></Security>
+</System>
+<EventData><Data Name="SubjectUserSid">S-1-5-18</Data>
+<Data Name="SubjectUserName">WIN-KCON-EXCH16$</Data>
+<Data Name="SubjectDomainName">EM.KRINGLECON</Data>
+<Data Name="SubjectLogonId">0x00000000000003e7</Data>
+<Data Name="TargetUserSid">S-1-5-21-25059752-1411454016-2901770228-1156</Data>
+<Data Name="TargetUserName">minty.candycane</Data>
+<Data Name="TargetDomainName">EM.KRINGLECON</Data>
+<Data Name="TargetLogonId">0x0000000001175cd9</Data>
+<Data Name="LogonType">8</Data>
+<Data Name="LogonProcessName">Advapi  </Data>
+<Data Name="AuthenticationPackageName">Negotiate</Data>
+<Data Name="WorkstationName">WIN-KCON-EXCH16</Data>
+<Data Name="LogonGuid">{5b50bc0d-2707-1b79-e2cb-6e5872170f2d}</Data>
+<Data Name="TransmittedServices">-</Data>
+<Data Name="LmPackageName">-</Data>
+<Data Name="KeyLength">0</Data>
+<Data Name="ProcessId">0x00000000000019f0</Data>
+<Data Name="ProcessName">C:\Windows\System32\inetsrv\w3wp.exe</Data>
+<Data Name="IpAddress">172.31.254.101</Data>
+<Data Name="IpPort">40762</Data>
+<Data Name="ImpersonationLevel">%%1833</Data>
+<Data Name="RestrictedAdminMode">-</Data>
+<Data Name="TargetOutboundUserName">-</Data>
+<Data Name="TargetOutboundDomainName">-</Data>
+<Data Name="VirtualAccount">%%1843</Data>
+<Data Name="TargetLinkedLogonId">0x0000000000000000</Data>
+<Data Name="ElevatedToken">%%1842</Data>
+--
+<EventID Qualifiers="">4624</EventID>
+elf@9d47349d0d45:~$ python evtx_dump.py ho-ho-no.evtx | grep -A40 '4624' | grep -A10 -B33 '172.31.254.101' | grep 'TargetUserName'
+<Data Name="TargetUserName">minty.candycane</Data>
+<Data Name="TargetUserName">minty.candycane</Data>
+elf@9d47349d0d45:~$ ./runtoanswer 
+Loading, please wait......
+
+
+
+Whose account was successfully accessed by the attacker's password spray? minty.candycane
+
+
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMkl0MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMXO0NMxl0MXOONMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMxlllooldollo0MMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMW0OKWMMNKkollldOKWMMNKOKMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMXollox0NMMMxlOMMMXOdllldWMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMWXOdlllokKxlk0xollox0NMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMNkkXMMMMMMMMMMMWKkollllllldkKWMMMMMMMMMMM0kOWMMMMMMMMMMMM
+MMMMMMWKXMMMkllxMMMMMMMMMMMMMMMXOold0NMMMMMMMMMMMMMMMollKMMWKKWMMMMMM
+MMMMMMdllKMMkllxMMMMMMMMMMMMN0KNMxl0MN00WMMMMMMMMMMMMollKMMOllkMMMMMM
+Mkox0XollKMMkllxMMMMMMMMMMMMxllldoldolllOMMMMMMMMMMMMollKMMkllxXOdl0M
+MMN0dllll0MMkllxMMMMMMMMMMMMMN0xolllokKWMMMMMMMMMMMMMollKMMkllllx0NMM
+MW0xolllolxOxllxMMNxdOMMMMMWMMMMWxlOMMMMWWMMMMWkdkWMMollOOdlolllokKMM
+M0lldkKWMNklllldNMKlloMMMNolok0NMxl0MX0xolxMMMXlllNMXolllo0NMNKkoloXM
+MMWWMMWXOdlllokdldxlloWMMXllllllooloollllllWMMXlllxolxxolllx0NMMMNWMM
+MMMN0kolllx0NMMW0ollll0NMKlloN0kolllokKKlllWMXklllldKMMWXOdlllokKWMMM
+MMOllldOKWMMMMkollox0OdldxlloMMMMxlOMMMNlllxoox0Oxlllo0MMMMWKkolllKMM
+MMW0KNMMMMMMMMKkOXWMMMW0olllo0NMMxl0MWXklllldXMMMMWKkkXMMMMMMMMX0KWMM
+MMMMMMMMMMMMMMMMMMMW0xollox0Odlokdlxxoox00xlllokKWMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMWollllOWMMMMNklllloOWMMMMNxllllxMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMN0xlllokK0xookdlxxookK0xollokKWMMMMMMMMMMMMMMMMMMM
+MMWKKWMMMMMMMMKk0XMMMMW0ollloOXMMxl0MWKklllldKWMMMWXOOXMMMMMMMMNKKMMM
+MMkllldOXWMMMMklllok00xoodlloMMMMxlOMMMNlllxook00xollo0MMMMWKkdlllKMM
+MMMN0xollox0NMMW0ollllONMKlloNKkollldOKKlllWMXklllldKWMMX0xlllok0NMMM
+MMWWMMWKkollldkxlodlloWMMXllllllooloollllllWMMXlllxooxkollldOXMMMWMMM
+M0lldOXWMNklllldNMKlloMMMNolox0XMxl0WXOxlldMMMXlllNMXolllo0WMWKkdloXM
+MW0xlllodldOxllxMMNxdOMMMMMNMMMMMxlOMMMMWNMMMMWxdxWMMollkkoldlllokKWM
+MMN0xllll0MMkllxMMMMMMMMMMMMMNKkolllokKWMMMMMMMMMMMMMollKMMkllllkKWMM
+MkldOXollKMMkllxMMMMMMMMMMMMxlllooloolll0MMMMMMMMMMMMollKMMkllxKkol0M
+MWWMMMdllKMMkllxMMMMMMMMMMMMXO0XMxl0WXOONMMMMMMMMMMMMollKMMOllkMMMWMM
+MMMMMMNKKMMMkllxMMMMMMMMMMMMMMMN0oldKWMMMMMMMMMMMMMMMollKMMWKKWMMMMMM
+MMMMMMMMMMMMXkxXMMMMMMMMMMMWKkollllllldOXMMMMMMMMMMMM0xkWMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMX0xlllok0xlk0xollox0NMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMXollldOXMMMxlOMMWXOdllldWMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMW0OKWMMWKkollldOXWMMN0kKMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMklllooloollo0MMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMXOOXMxl0WKOONMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMkl0MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+Silly Minty Candycane, well this is what she gets.
+"Winter2018" isn't for The Internets.
+Passwords formed with season-year are on the hackers' list.
+Maybe we should look at guidance published by the NIST?
+
+Congratulations!
+
+elf@9d47349d0d45:~$

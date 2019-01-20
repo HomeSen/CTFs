@@ -1,0 +1,188 @@
+                                                                               
+                                                                               
+                  .....................................                        
+                 ...',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,'....                      
+                 ...,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,'...                     
+                  ......'''''''''''''''''''''''',,,,,,,'...                    
+                     ............................',,,,,,,...                   
+                                                ...,,,,,,'...                  
+                                                 ..',,,,,,'..                  
+                                                 ...,,,,,,,...                 
+                                                 ...,,,,,,,...                 
+            ........................................,,,,,,,'......             
+         .....''''''''''''''''''''''''''''''''''''',,,,,,,,,,'''.....          
+        ...............................................................        
+        ...............................................................        
+      .:llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllc.       
+     .llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll;      
+    'llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll:     
+   .kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk:    
+   o0000000000000000000000000000000000000000000000000000000000000000000000O    
+   O00000000000000000000000000000000000000000000000000000000000000000000000'   
+   O00000000000000000000000000000000000000000000000000000000000000000000000'   
+   d0000000000000000000000000000000000000000000000000000000000000000000000O.   
+   'OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOc    
+    ,llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll:     
+     ,llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll:      
+      .clllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll'       
+        'clllllllllllllllllllllllllllllllllllllllllllllllllllllllllll,         
+          .,clllllllllllllllllllllllllllllllllllllllllllllllllllll;.           
+              .';:cllllllllllllllllllllllllllllllllllllllllcc;,..              
+                                                                               
+
+
+I am Holly Evergreen, and now you won't believe:
+Once again the striper stopped; I think I might just leave!
+Bushy set it up to start upon a website call.
+Darned if I can CURL it on - my Linux skills apall.
+
+Could you be our CURLing master - fixing up this mess?
+If you are, there's one concern you surely must address.
+Something's off about the conf that Bushy put in place.
+Can you overcome this snag and save us all some face?
+
+  Complete this challenge by submitting the right HTTP 
+  request to the server at http://localhost:8080/ to 
+  get the candy striper started again. You may view 
+  the contents of the nginx.conf file in 
+  /etc/nginx/, if helpful.
+elf@82206de9d85d:~$ cat /etc/nginx/nginx.conf 
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+        worker_connections 768;
+        # multi_accept on;
+}
+
+http {
+
+        sendfile on;
+        tcp_nopush on;
+        tcp_nodelay on;
+        keepalive_timeout 65;
+        types_hash_max_size 2048;
+        # server_tokens off;
+
+        # server_names_hash_bucket_size 64;
+        # server_name_in_redirect off;
+
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+
+        server {
+        # love using the new stuff! -Bushy
+                listen                  8080 http2;
+                # server_name           localhost 127.0.0.1;
+                root /var/www/html;
+
+                location ~ [^/]\.php(/|$) {
+                    fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+                    if (!-f $document_root$fastcgi_script_name) {
+                        return 404;
+                    }
+
+                    # Mitigate https://httpoxy.org/ vulnerabilities
+                    fastcgi_param HTTP_PROXY "";
+
+                    # fastcgi_pass 127.0.0.1:9000;
+                    fastcgi_pass unix:/var/run/php/php-fpm.sock;
+                    fastcgi_index index.php;
+
+                    # include the fastcgi_param setting
+                    include fastcgi_params;
+
+                    # SCRIPT_FILENAME parameter is used for PHP FPM determining
+                    #  the script name. If it is not set in fastcgi_params file,
+                    # i.e. /etc/nginx/fastcgi_params or in the parent contexts,
+                    # please comment off following line:
+                    # fastcgi_param  SCRIPT_FILENAME   $document_root$fastcgi_script_name;
+                }
+
+                }
+
+        ##
+        # Logging Settings
+        ##
+
+        access_log /var/log/nginx/access.log;
+        error_log /var/log/nginx/error.log;
+
+        ##
+        # Gzip Settings
+        ##
+
+        gzip on;
+        gzip_disable "msie6";
+        
+        # gzip_vary on;
+        # gzip_proxied any;
+        # gzip_comp_level 6;
+        # gzip_buffers 16 8k;
+        # gzip_http_version 1.1;
+        # gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+        ##
+        # Virtual Host Configs
+        ##
+
+        include /etc/nginx/conf.d/*.conf;
+        include /etc/nginx/sites-enabled/*;
+
+}
+elf@82206de9d85d:~$ curl --help | grep -i http2
+     --http2         Use HTTP 2 (H)
+     --http2-prior-knowledge  Use HTTP 2 without HTTP/1.1 Upgrade (H)
+elf@82206de9d85d:~$ curl --http2 --http2-prior-knowledge http://localhost:8080
+<html>
+ <head>
+  <title>Candy Striper Turner-On'er</title>
+ </head>
+ <body>
+ <p>To turn the machine on, simply POST to this URL with parameter "status=on"
+
+ 
+ </body>
+</html>
+elf@82206de9d85d:~$ curl --http2 --http2-prior-knowledge --data "status=on" http://localhost:8080
+<html>
+ <head>
+  <title>Candy Striper Turner-On'er</title>
+ </head>
+ <body>
+ <p>To turn the machine on, simply POST to this URL with parameter "status=on"
+
+                                                                                
+                                                                okkd,          
+                                                               OXXXXX,         
+                                                              oXXXXXXo         
+                                                             ;XXXXXXX;         
+                                                            ;KXXXXXXx          
+                                                           oXXXXXXXO           
+                                                        .lKXXXXXXX0.           
+  ''''''       .''''''       .''''''       .:::;   ':okKXXXXXXXX0Oxcooddool,   
+ 'MMMMMO',,,,,;WMMMMM0',,,,,;WMMMMMK',,,,,,occccoOXXXXXXXXXXXXXxxXXXXXXXXXXX.  
+ 'MMMMN;,,,,,'0MMMMMW;,,,,,'OMMMMMW:,,,,,'kxcccc0XXXXXXXXXXXXXXxx0KKKKK000d;   
+ 'MMMMl,,,,,,oMMMMMMo,,,,,,lMMMMMMd,,,,,,cMxcccc0XXXXXXXXXXXXXXOdkO000KKKKK0x. 
+ 'MMMO',,,,,;WMMMMMO',,,,,,NMMMMMK',,,,,,XMxcccc0XXXXXXXXXXXXXXxxXXXXXXXXXXXX: 
+ 'MMN,,,,,,'OMMMMMW;,,,,,'kMMMMMW;,,,,,'xMMxcccc0XXXXXXXXXXXXKkkxxO00000OOx;.  
+ 'MMl,,,,,,lMMMMMMo,,,,,,cMMMMMMd,,,,,,:MMMxcccc0XXXXXXXXXXKOOkd0XXXXXXXXXXO.  
+ 'M0',,,,,;WMMMMM0',,,,,,NMMMMMK,,,,,,,XMMMxcccckXXXXXXXXXX0KXKxOKKKXXXXXXXk.  
+ .c.......'cccccc.......'cccccc.......'cccc:ccc: .c0XXXXXXXXXX0xO0000000Oc     
+                                                    ;xKXXXXXXX0xKXXXXXXXXK.    
+                                                       ..,:ccllc:cccccc:'      
+                                                                               
+
+Unencrypted 2.0? He's such a silly guy.
+That's the kind of stunt that makes my OWASP friends all cry.
+Truth be told: most major sites are speaking 2.0;
+TLS connections are in place when they do so.
+
+-Holly Evergreen
+<p>Congratulations! You've won and have successfully completed this challenge.
+<p>POSTing data in HTTP/2.0.
+
+ </body>
+</html>
